@@ -1,25 +1,21 @@
-import React, { ReactNode } from 'react'
-import { Box, Container } from '@chakra-ui/react'
-import { Header } from './Header'
-import { Footer } from './Footer'
-import { NetworkStatus } from './NetworkStatus'
+import { ReactNode } from 'react';
+import { Header } from './Header';
+import Footer from './Footer';
+import { NetworkStatus } from './NetworkStatus';
 
 interface Props {
-  children: ReactNode
+	children: ReactNode;
 }
 
 export function Layout(props: Props) {
-  return (
-    <Box margin="0 auto" minH="100vh">
-      <Header />
-
-      <Container maxW="container.lg">{props.children}</Container>
-
-      <Box position="fixed" bottom={2} right={2}>
-        <NetworkStatus />
-      </Box>
-
-      <Footer />
-    </Box>
-  )
+	return (
+		<div className=" mx-0 my-auto min-h-screen">
+			<Header />
+			<div className=" max-w-lg">{props.children}</div>
+			<div className=" fixed bottom-1 right-1">
+				<NetworkStatus />
+			</div>
+			<Footer />
+		</div>
+	);
 }

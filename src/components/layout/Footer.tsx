@@ -1,28 +1,27 @@
-import React from 'react'
-import { Flex, Text } from '@chakra-ui/react'
-import { FaGithub, FaTwitter } from 'react-icons/fa'
-import { LinkComponent } from './LinkComponent'
-import { SITE_DESCRIPTION, SOCIAL_GITHUB, SOCIAL_TWITTER } from 'utils/config'
+import { FC } from 'react';
+import { FaGithub, FaTwitter } from 'react-icons/fa';
+import LinkComponent from './LinkComponent';
+import { SITE_DESCRIPTION, SOCIAL_GITHUB, SOCIAL_TWITTER } from 'utils/config';
 
 interface Props {
-  className?: string
+	className?: string;
 }
 
-export function Footer(props: Props) {
-  const className = props.className ?? ''
+const Footer: FC<Props> = () => {
+	return (
+		<footer className="flex flex-col justify-center items-center my-2">
+			<p>{SITE_DESCRIPTION}</p>
 
-  return (
-    <Flex as="footer" className={className} flexDirection="column" justifyContent="center" alignItems="center" my={8}>
-      <Text>{SITE_DESCRIPTION}</Text>
+			<div className="text-gray-500 gap-1 items-center mt-1">
+				<LinkComponent href={`https://github.com/${SOCIAL_GITHUB}`}>
+					<FaGithub />
+				</LinkComponent>
+				<LinkComponent href={`https://twitter.com/${SOCIAL_TWITTER}`}>
+					<FaTwitter />
+				</LinkComponent>
+			</div>
+		</footer>
+	);
+};
 
-      <Flex color="gray.500" gap={2} alignItems="center" mt={2}>
-        <LinkComponent href={`https://github.com/${SOCIAL_GITHUB}`}>
-          <FaGithub />
-        </LinkComponent>
-        <LinkComponent href={`https://twitter.com/${SOCIAL_TWITTER}`}>
-          <FaTwitter />
-        </LinkComponent>
-      </Flex>
-    </Flex>
-  )
-}
+export default Footer;
