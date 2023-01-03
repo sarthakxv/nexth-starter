@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { SITE_NAME } from 'utils/config';
 import LinkComponent from './LinkComponent';
 import { ConnectKitButton } from 'connectkit';
@@ -7,18 +7,17 @@ interface Props {
 	className?: string;
 }
 
-export function Header(props: Props) {
-	const className = props.className ?? '';
-
+const Header: FC<Props> = (props) => {
 	return (
-		<header className="flex px-1 py-1 mb-2 items-center">
+		<header className="flex bg-gray-100 px-4 py-3 mb-10 justify-between items-center">
 			<LinkComponent href="/">
-				<h1 className="text-3xl">{SITE_NAME}</h1>
+				<p className="text-xl font-bold">{SITE_NAME}</p>
 			</LinkComponent>
-
-			<div className="flex items-center gap-1">
+			<div>
 				<ConnectKitButton />
 			</div>
 		</header>
 	);
-}
+};
+
+export default Header;

@@ -6,6 +6,6 @@
 	"singleQuote": true,
 	"printWidth": 80,
 	"bracketSameLine": true,
-	"useTabs": true,
+	"useTabs": false,
 	"tabWidth": 2
 }

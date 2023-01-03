@@ -1,21 +1,23 @@
-import { ReactNode } from 'react';
-import { Header } from './Header';
+import { ReactNode, FC } from 'react';
+import Header from './Header';
 import Footer from './Footer';
-import { NetworkStatus } from './NetworkStatus';
+import NetworkStatus from './NetworkStatus';
 
 interface Props {
 	children: ReactNode;
 }
 
-export function Layout(props: Props) {
+const Layout: FC<Props> = (props) => {
 	return (
-		<div className=" mx-0 my-auto min-h-screen">
+		<div className="flex flex-col min-h-screen">
 			<Header />
-			<div className=" max-w-lg">{props.children}</div>
-			<div className=" fixed bottom-1 right-1">
+			<div className="text-center">{props.children}</div>
+			<div className="fixed bottom-1 right-1">
 				<NetworkStatus />
 			</div>
 			<Footer />
 		</div>
 	);
-}
+};
+
+export default Layout;

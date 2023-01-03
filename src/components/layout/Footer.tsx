@@ -9,10 +9,9 @@ interface Props {
 
 const Footer: FC<Props> = () => {
 	return (
-		<footer className="flex flex-col justify-center items-center my-2">
+		<footer className="flex flex-col w-full fixed bottom-0 justify-center items-center py-4">
 			<p>{SITE_DESCRIPTION}</p>
-
-			<div className="text-gray-500 gap-1 items-center mt-1">
+			<div className="flex gap-x-4 text-xl text-gray-500 items-center mt-1">
 				<LinkComponent href={`https://github.com/${SOCIAL_GITHUB}`}>
 					<FaGithub />
 				</LinkComponent>
