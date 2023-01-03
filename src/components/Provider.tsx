@@ -1,8 +1,8 @@
+import { ReactNode } from 'react';
 import { configureChains, createClient, WagmiConfig } from 'wagmi';
 import { publicProvider } from 'wagmi/providers/public';
 import { ConnectKitProvider, getDefaultClient } from 'connectkit';
 import { ETH_CHAINS, SITE_NAME } from 'utils/config';
-import { ReactNode } from 'react';
 
 interface Props {
 	children: ReactNode;
@@ -21,7 +21,7 @@ const client = createClient(
 	})
 );
 
-export function Web3Provider(props: Props) {
+export default function Provider(props: Props) {
 	return (
 		<WagmiConfig client={client}>
 			<ConnectKitProvider theme="soft">{props.children}</ConnectKitProvider>

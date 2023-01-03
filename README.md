@@ -5,6 +5,12 @@ A [Next.js](https://nextjs.org/) + Ethereum starter kit.
 ## Getting Started
 
 ```bash
+npm install
+# or
+yarn install
+```
+
+```bash
 npm run dev
 # or
 yarn dev
@@ -13,7 +19,7 @@ yarn dev
 ## Features
 
 - [Next.js](https://nextjs.org/docs)
-- [Chakra UI](https://chakra-ui.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [wagmi](https://wagmi.sh/)
 - [ethers.js](https://docs.ethers.org/)
